@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BlockInteraction : MonoBehaviour
 {
@@ -7,11 +8,15 @@ public class BlockInteraction : MonoBehaviour
     public Material outlineMaterial; // Materiale per il contorno
     private Material originalMaterial; // Materiale originale del blocco
     private Transform selectedBlock; // Blocco attualmente selezionato
-    public GameObject blockPrefab; // Assegna manualmente il prefab del blocco nell'Inspector
+    public GameObject blockPrefab; // Prefab per piazzare blocchi
+
+    private bool isBreaking = false; // Controlla se il giocatore sta rompendo un blocco
+    private Coroutine breakCoroutine; // Coroutine per gestire la distruzione
 
     void Update()
     {
         HandleBlockSelection();
+        HandleBlockDestruction();
         HandleBlockPlacement();
     }
 
@@ -47,20 +52,41 @@ public class BlockInteraction : MonoBehaviour
         }
     }
 
-    void HandleBlockPlacement()
+    void HandleBlockDestruction()
     {
-        if (Input.GetMouseButtonDown(0) && selectedBlock != null) // Rimuovere un blocco
+        if (Input.GetMouseButtonDown(0) && selectedBlock != null && selectedBlock.tag != "Bedrock") 
         {
-            if (selectedBlock.tag == "Bedrock")
+            if (!isBreaking) // Se non sta già distruggendo un blocco
             {
-                Debug.Log("Non puoi rompere la Bedrock!");
-                return;
+                breakCoroutine = StartCoroutine(BreakBlock(selectedBlock));
             }
-
-            print("Rimuovo blocco");
-            Destroy(selectedBlock.gameObject);
         }
 
+        if (Input.GetMouseButtonUp(0) && isBreaking)
+        {
+            StopCoroutine(breakCoroutine); // Interrompe la distruzione se il tasto viene rilasciato
+            isBreaking = false;
+            Debug.Log("Distruzione annullata.");
+        }
+    }
+
+    IEnumerator BreakBlock(Transform block)
+    {
+        isBreaking = true;
+        BlockData blockData = block.GetComponent<BlockData>();
+        float breakTime = blockData != null ? blockData.breakTime : 1f; // Tempo di distruzione del blocco
+
+        Debug.Log($"Distruzione avviata, tempo richiesto: {breakTime}s");
+
+        yield return new WaitForSeconds(breakTime); // Aspetta il tempo necessario per la distruzione
+
+        Debug.Log("Blocco distrutto!");
+        Destroy(block.gameObject);
+        isBreaking = false;
+    }
+
+    void HandleBlockPlacement()
+    {
         if (Input.GetMouseButtonDown(1)) // Aggiungere un blocco
         {
             print("Piazzo blocco");
