@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.39734, y: 2608}
+  m_AnchoredPosition: {x: 99.82678, y: 2608}
   m_SizeDelta: {x: 714, y: 4136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349626544
@@ -191,8 +191,8 @@ MonoBehaviour:
     - Christian Conti\n\nStudente - Mirko Pratesi\n\nStudente - Gabriele Cerbioni\n\nStudente
     - Federico Baldini\n\nStudente - Alberto Pilloni\n\nStudente - Paolo Betti\n\n\n\n\n\nStudente
     - Christian Conti  -- (Referente)\n\nStudente - Mirko Pratesi\n\nStudente - Pavel
-    Cavallini\n\nStudente - Alessandro Mazzinghi\n\nStudente - Elisei Mailat\n\n\n\n\n\n\n\n\n\tAI
-    - ChatGPT\n\n\tAI - DeepSeek\n\n\tAI - Gemini\n\n\tAI - Cloude\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    Cavallini\n\nStudente - Alessandro Mazzinghi\n\nStudente - Elisei Mailat\n\n\n\n\n\n\n\n\nAI
+    - ChatGPT\n\nAI - DeepSeek\n\nAI - Gemini\n\nAI - Cloude\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21f4464817f59ea498e53d9b2cb82676, type: 2}
   m_sharedMaterial: {fileID: 1418074792549281240, guid: 21f4464817f59ea498e53d9b2cb82676, type: 2}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcb1cb6b25d9fd4f87b240c1499ac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 75
+  scrollSpeed: 100
   creditsContainer: {fileID: 349626543}
   activationDelay: 0.5
   finalSceneName: FinalLevel
@@ -1009,8 +1009,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.5, y: -0.75}
-  m_SizeDelta: {x: 435, y: 4134.5}
+  m_AnchoredPosition: {x: -94.5, y: -0.75}
+  m_SizeDelta: {x: 511, y: 4134.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081960036
 MonoBehaviour:
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
