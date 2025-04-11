@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcb1cb6b25d9fd4f87b240c1499ac96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 100
+  scrollSpeed: 120
   creditsContainer: {fileID: 349626543}
   activationDelay: 0.5
   finalSceneName: FinalLevel
